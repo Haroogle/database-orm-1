@@ -39,7 +39,12 @@ async function seed() {
       screen: { connect: { id: createdScreen.id } },
     },
   });
-
+  const createdTicket = await prisma.ticket.create({
+    data: {
+      customer: { connect: { id: createdCustomer.id } },
+      screening: { connect: { id: createdScreening.id } },
+    },
+  });
   // Don't edit any of the code below this line
   process.exit(0);
 }
