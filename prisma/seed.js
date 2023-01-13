@@ -19,6 +19,19 @@ async function seed() {
     },
   });
 
+  const createdMovie = await prisma.movie.create({
+    data: {
+      title: "BAd Shit",
+      runtimeMins: 23,
+    }
+  })
+
+  const createdScreening = await prisma.screening.create ({
+    data: {
+      startsAt: "2004-12-13T21:39:45.618-08:00"
+    }
+  })
+
   // Don't edit any of the code below this line
   process.exit(0);
 }
